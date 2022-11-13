@@ -1,0 +1,110 @@
+/* reset browser default behavior */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../imgs/floor.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+
+  overflow: hidden;
+}
+
+.book {
+  position: relative;
+  top: 0;
+
+  width: 400px;
+  height: 530px;
+
+  background-color: #fff;
+  transform: rotate(-37.5deg) skewX(10deg);
+  box-shadow: -35px 35px 50px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+.book:hover {
+  transform: rotate(-37.5deg) skewX(10deg) translate(15px, -15px);
+  box-shadow: -50px 50px 100px rgba(0, 0, 0, 0.1);
+}
+
+.book::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 35px;
+  height: 100%;
+
+  /* skewY(-45deg) rotate inside */
+  /* x:-30px from top to bottom, y:-15px from right to left */
+  transform: skewY(-45deg) translate(-30px, -15px);
+  background-image: url(../imgs/bg.jpg);
+  background-position: 0 -73px;
+  box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.book::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 99.2%;
+  height: 35px;
+
+  transform: skewX(-45deg) translate(18px, 30px);
+  background-color: #f1f1f1;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 4px;
+
+  width: 99.5%;
+  height: 65%;
+
+  background-image: url(../imgs/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.title {
+  position: absolute;
+  font-size: 4.5rem;
+  bottom: 100px;
+  left: 20px;
+  color: #fff;
+}
+
+.title span {
+  background-image: url(../imgs/bg.jpg);
+  background-attachment: fixed;
+  background-position: 10px 80%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.author {
+  position: absolute;
+  font-size: 0.5rem;
+  bottom: 15px;
+  right: 15px;
+}
